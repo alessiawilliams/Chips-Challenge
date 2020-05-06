@@ -42,9 +42,11 @@
             this.gameTick = new System.Windows.Forms.Timer(this.components);
             this.menuBar = new System.Windows.Forms.MenuStrip();
             this.menuBarFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuBarLevel = new System.Windows.Forms.ToolStripMenuItem();
+            this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuBarLevel = new System.Windows.Forms.ToolStripMenuItem();
             this.enterPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +60,7 @@
             // timeTextLabel
             // 
             this.timeTextLabel.AutoSize = true;
-            this.timeTextLabel.Location = new System.Drawing.Point(480, 62);
+            this.timeTextLabel.Location = new System.Drawing.Point(455, 46);
             this.timeTextLabel.Name = "timeTextLabel";
             this.timeTextLabel.Size = new System.Drawing.Size(97, 13);
             this.timeTextLabel.TabIndex = 2;
@@ -67,7 +69,7 @@
             // timeLabel
             // 
             this.timeLabel.AutoSize = true;
-            this.timeLabel.Location = new System.Drawing.Point(515, 80);
+            this.timeLabel.Location = new System.Drawing.Point(489, 91);
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(25, 13);
             this.timeLabel.TabIndex = 3;
@@ -75,7 +77,7 @@
             // 
             // timeBar
             // 
-            this.timeBar.Location = new System.Drawing.Point(480, 100);
+            this.timeBar.Location = new System.Drawing.Point(457, 63);
             this.timeBar.Name = "timeBar";
             this.timeBar.Size = new System.Drawing.Size(94, 23);
             this.timeBar.TabIndex = 4;
@@ -83,7 +85,7 @@
             // chipsRTextLabel
             // 
             this.chipsRTextLabel.AutoSize = true;
-            this.chipsRTextLabel.Location = new System.Drawing.Point(477, 137);
+            this.chipsRTextLabel.Location = new System.Drawing.Point(455, 120);
             this.chipsRTextLabel.Name = "chipsRTextLabel";
             this.chipsRTextLabel.Size = new System.Drawing.Size(103, 13);
             this.chipsRTextLabel.TabIndex = 5;
@@ -92,7 +94,7 @@
             // chipsRLabel
             // 
             this.chipsRLabel.AutoSize = true;
-            this.chipsRLabel.Location = new System.Drawing.Point(520, 158);
+            this.chipsRLabel.Location = new System.Drawing.Point(495, 139);
             this.chipsRLabel.Name = "chipsRLabel";
             this.chipsRLabel.Size = new System.Drawing.Size(19, 13);
             this.chipsRLabel.TabIndex = 6;
@@ -101,7 +103,7 @@
             // chipsCTextLabel
             // 
             this.chipsCTextLabel.AutoSize = true;
-            this.chipsCTextLabel.Location = new System.Drawing.Point(477, 194);
+            this.chipsCTextLabel.Location = new System.Drawing.Point(455, 172);
             this.chipsCTextLabel.Name = "chipsCTextLabel";
             this.chipsCTextLabel.Size = new System.Drawing.Size(105, 13);
             this.chipsCTextLabel.TabIndex = 7;
@@ -110,7 +112,7 @@
             // chipsCLabel
             // 
             this.chipsCLabel.AutoSize = true;
-            this.chipsCLabel.Location = new System.Drawing.Point(524, 214);
+            this.chipsCLabel.Location = new System.Drawing.Point(499, 192);
             this.chipsCLabel.Name = "chipsCLabel";
             this.chipsCLabel.Size = new System.Drawing.Size(13, 13);
             this.chipsCLabel.TabIndex = 8;
@@ -118,40 +120,39 @@
             // 
             // tilePanel
             // 
+            this.tilePanel.BackColor = System.Drawing.Color.LightGray;
             this.tilePanel.ColumnCount = 9;
-            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.Location = new System.Drawing.Point(12, 32);
+            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.Location = new System.Drawing.Point(20, 44);
             this.tilePanel.Name = "tilePanel";
             this.tilePanel.RowCount = 9;
-            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tilePanel.Size = new System.Drawing.Size(400, 400);
+            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tilePanel.Size = new System.Drawing.Size(387, 387);
             this.tilePanel.TabIndex = 9;
             // 
             // secondsTimer
             // 
-            this.secondsTimer.Enabled = true;
             this.secondsTimer.Interval = 1000;
             this.secondsTimer.Tick += new System.EventHandler(this.secondsTimer_Tick);
             // 
             // gameTick
             // 
-            this.gameTick.Enabled = true;
             this.gameTick.Interval = 75;
             this.gameTick.Tick += new System.EventHandler(this.gameTick_Tick);
             // 
@@ -162,43 +163,67 @@
             this.menuBarLevel});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
-            this.menuBar.Size = new System.Drawing.Size(667, 24);
+            this.menuBar.Size = new System.Drawing.Size(600, 24);
             this.menuBar.TabIndex = 10;
             this.menuBar.Text = "menuStrip1";
             // 
             // menuBarFile
             // 
             this.menuBarFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newGameToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuBarFile.Name = "menuBarFile";
-            this.menuBarFile.Size = new System.Drawing.Size(122, 20);
+            this.menuBarFile.Size = new System.Drawing.Size(37, 20);
             this.menuBarFile.Text = "File";
+            // 
+            // newGameToolStripMenuItem
+            // 
+            this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
+            this.newGameToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.newGameToolStripMenuItem.Text = "New Game";
+            this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // menuBarLevel
             // 
             this.menuBarLevel.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.restartToolStripMenuItem,
             this.enterPasswordToolStripMenuItem});
             this.menuBarLevel.Name = "menuBarLevel";
             this.menuBarLevel.Size = new System.Drawing.Size(46, 20);
             this.menuBarLevel.Text = "Level";
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
             // enterPasswordToolStripMenuItem
             // 
             this.enterPasswordToolStripMenuItem.Name = "enterPasswordToolStripMenuItem";
-            this.enterPasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.enterPasswordToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.enterPasswordToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.enterPasswordToolStripMenuItem.Text = "Enter Password";
+            this.enterPasswordToolStripMenuItem.Click += new System.EventHandler(this.enterPasswordToolStripMenuItem_Click);
+            // 
+            // restartToolStripMenuItem
+            // 
+            this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
+            this.restartToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F5)));
+            this.restartToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.restartToolStripMenuItem.Text = "Restart";
+            this.restartToolStripMenuItem.Click += new System.EventHandler(this.restartToolStripMenuItem_Click);
             // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 444);
+            this.BackgroundImage = global::AlessiaChipProj.Resources.Background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(600, 450);
             this.Controls.Add(this.tilePanel);
             this.Controls.Add(this.chipsCLabel);
             this.Controls.Add(this.chipsCTextLabel);
@@ -209,6 +234,7 @@
             this.Controls.Add(this.timeTextLabel);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.menuBar);
+            this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuBar;
             this.Name = "GameForm";
             this.Text = "Chips Challenge - Alessia";
@@ -239,6 +265,8 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuBarLevel;
         private System.Windows.Forms.ToolStripMenuItem enterPasswordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem restartToolStripMenuItem;
     }
 }
 
