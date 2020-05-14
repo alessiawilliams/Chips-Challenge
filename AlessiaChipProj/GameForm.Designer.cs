@@ -45,8 +45,10 @@
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBarLevel = new System.Windows.Forms.ToolStripMenuItem();
-            this.enterPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enterPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventoryLabel = new System.Windows.Forms.Label();
+            this.hintLabel = new System.Windows.Forms.Label();
             this.menuBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -201,14 +203,6 @@
             this.menuBarLevel.Size = new System.Drawing.Size(46, 20);
             this.menuBarLevel.Text = "Level";
             // 
-            // enterPasswordToolStripMenuItem
-            // 
-            this.enterPasswordToolStripMenuItem.Name = "enterPasswordToolStripMenuItem";
-            this.enterPasswordToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.enterPasswordToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.enterPasswordToolStripMenuItem.Text = "Enter Password";
-            this.enterPasswordToolStripMenuItem.Click += new System.EventHandler(this.enterPasswordToolStripMenuItem_Click);
-            // 
             // restartToolStripMenuItem
             // 
             this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
@@ -217,6 +211,31 @@
             this.restartToolStripMenuItem.Text = "Restart";
             this.restartToolStripMenuItem.Click += new System.EventHandler(this.restartToolStripMenuItem_Click);
             // 
+            // enterPasswordToolStripMenuItem
+            // 
+            this.enterPasswordToolStripMenuItem.Name = "enterPasswordToolStripMenuItem";
+            this.enterPasswordToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.enterPasswordToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.enterPasswordToolStripMenuItem.Text = "Enter Password";
+            this.enterPasswordToolStripMenuItem.Click += new System.EventHandler(this.enterPasswordToolStripMenuItem_Click);
+            // 
+            // inventoryLabel
+            // 
+            this.inventoryLabel.AutoSize = true;
+            this.inventoryLabel.Location = new System.Drawing.Point(470, 258);
+            this.inventoryLabel.Name = "inventoryLabel";
+            this.inventoryLabel.Size = new System.Drawing.Size(70, 13);
+            this.inventoryLabel.TabIndex = 11;
+            this.inventoryLabel.Text = "INVENTORY";
+            // 
+            // hintLabel
+            // 
+            this.hintLabel.Location = new System.Drawing.Point(433, 382);
+            this.hintLabel.Name = "hintLabel";
+            this.hintLabel.Size = new System.Drawing.Size(150, 50);
+            this.hintLabel.TabIndex = 12;
+            this.hintLabel.Text = "Hint:";
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,6 +243,8 @@
             this.BackgroundImage = global::AlessiaChipProj.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(600, 450);
+            this.Controls.Add(this.hintLabel);
+            this.Controls.Add(this.inventoryLabel);
             this.Controls.Add(this.tilePanel);
             this.Controls.Add(this.chipsCLabel);
             this.Controls.Add(this.chipsCTextLabel);
@@ -267,6 +288,8 @@
         private System.Windows.Forms.ToolStripMenuItem enterPasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restartToolStripMenuItem;
+        private System.Windows.Forms.Label inventoryLabel;
+        private System.Windows.Forms.Label hintLabel;
     }
 }
 

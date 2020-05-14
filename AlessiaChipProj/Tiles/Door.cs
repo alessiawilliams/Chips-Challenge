@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AlessiaChipProj.Tiles
 {
-    class Door
+    public class Door
     {
         public Color color { get; set; }
         public bool open { get; set; }

@@ -1,4 +1,5 @@
-﻿using AlessiaChipProj.Tiles.Items;
+﻿using AlessiaChipProj.Tiles;
+using AlessiaChipProj.Tiles.Items;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -14,8 +15,11 @@ namespace AlessiaChipProj
         Key key { get; set; }
         bool isExit { get; set; }
         bool isHint { get; set; }
+        bool isDoor { get; set; }
+        Door door { get; set; }
 
         void TogglePlayer();
         void AddKey(Color c);
+        void AddDoor(Color c);
     }
 }

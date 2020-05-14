@@ -64,7 +64,7 @@ namespace AlessiaChipProj
                 this._containsKey = value;
                 if (this._containsKey)
                 {
-                    if(this.key.color == Color.Red && this._containsKey) { this.pictureBox.BackgroundImage = Resources.RedDoor; }
+                    if(this.key.color == Color.Red) { this.pictureBox.BackgroundImage = Resources.RedDoor; }
                 }
             }
         }
@@ -89,7 +89,7 @@ namespace AlessiaChipProj
                 this._isDoor = value;
                 if (this._isDoor && this.door.color == Color.Red) { this.pictureBox.BackgroundImage = Resources.RedDoor; }
                 if (this._isDoor && this.door.color == Color.Yellow) { this.pictureBox.BackgroundImage = Resources.YellowDoor; }
-                if (this._isDoor && this.door.color == Color.Yellow) { this.pictureBox.BackgroundImage = Resources.BlueDoor; }
+                if (this._isDoor && this.door.color == Color.Blue) { this.pictureBox.BackgroundImage = Resources.BlueDoor; }
             }
         }
 
@@ -124,12 +124,13 @@ namespace AlessiaChipProj
                 this.containsPlayer = false;
                 if (this.isExit) { this.pictureBox.BackgroundImage = Resources.ExitBlock; }
                 else if (this.isHint) { this.pictureBox.BackgroundImage = Resources.HintBlock; }
+                else if (this.isDoor) { this.isDoor = true; } // Reruns set method
                 else { this.pictureBox.BackgroundImage = Resources.Block; }
             }
             else
             {
                 this.containsPlayer = true;
-                this.pictureBox.BackgroundImage = null;
+                this.pictureBox.BackgroundImage = null; //TODO: Add Player image
             }
         }
     }

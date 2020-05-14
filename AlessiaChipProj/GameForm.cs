@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlessiaChipProj.Tiles.Items;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,9 +17,11 @@ namespace AlessiaChipProj
         IGameTile[,] gameBoard = new IGameTile[9, 9];
         int timeRemaining = 100;
         int[] playerLocation = new int[2];
+        List<Key> inventory = new List<Key>();
         int chipsRemaining;
         int chipsCollected;
         int currentLevel = 0;
+        string levelHintText;
 
         // Form UI
         public GameForm()
@@ -61,14 +64,15 @@ namespace AlessiaChipProj
             string pw = pf.passwordBox.Text;
             pf.Dispose();
             if (pw == "one") { StartLevelOne(); }
-            else if (pw == "two") { } // Start level 2, etc
+            else if (pw == "two") { } // TODO: Start level 2, etc
             else { MessageBox.Show("Sorry, that's not a valid password!", "Whoops!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
         // Deals with Menu > Level > Restart
         private void restartToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (currentLevel == 1) { StartLevelOne(); }
+            // TODO: Start level 2, etc.
         }
 
         // START FORM
@@ -83,11 +87,16 @@ namespace AlessiaChipProj
             // Form
             InitializePanel();
             currentLevel = 1;
+            timeRemaining = 100;
             this.Text = "[LEVEL 1] Chips Challenge - Alessia";
             this.secondsTimer.Enabled = true;
             this.gameTick.Enabled = true;
 
+            // Create hint
+            levelHintText = "Hint: Collect all the chips and go to the exit door.";
+
             // Initialize player
+            inventory.Clear();
             playerLocation[0] = 7;
             playerLocation[1] = 7;
             gameBoard[7, 7].TogglePlayer();
@@ -108,6 +117,11 @@ namespace AlessiaChipProj
             // Create exit and hint tiles
             gameBoard[1, 1].isExit = true;
             gameBoard[6, 7].isHint = true;
+
+            // Create doors and keys
+            gameBoard[1, 3].AddKey(Color.Red);
+            gameBoard[4, 5].AddDoor(Color.Red);
+            gameBoard[6, 5].AddDoor(Color.Yellow);
         }
 
         // GAME ENGINE VARIABLES
@@ -145,17 +159,54 @@ namespace AlessiaChipProj
             {
                 gameBoard[playerLocation[0], playerLocation[1]].containsKey = false;
                 gameBoard[playerLocation[0], playerLocation[1]].key.collected = true;
+                inventory.Add(gameBoard[playerLocation[0], playerLocation[1]].key);
+            }
+
+            // Handle hint blocks
+            if (gameBoard[playerLocation[0], playerLocation[1]].isHint)
+            {
+                hintLabel.Text = levelHintText;
+            }
+            else
+            {
+                hintLabel.Text = "Hint: ";
             }
 
             // Handle movement
             gameBoard[playerLocation[0], playerLocation[1]].TogglePlayer();
-            if (goUp && playerLocation[1] > 0 && gameBoard[playerLocation[0], playerLocation[1] - 1].walkable) { playerLocation[1] -= 1; }
-            if (goDown && playerLocation[1] < 8 && gameBoard[playerLocation[0], playerLocation[1] + 1].walkable) { playerLocation[1] += 1; }
-            if (goLeft && playerLocation[0] > 0 && gameBoard[playerLocation[0] - 1, playerLocation[1]].walkable) { playerLocation[0] -= 1; }
-            if (goRight && playerLocation[0] < 8 && gameBoard[playerLocation[0] + 1, playerLocation[1]].walkable) { playerLocation[0] += 1; }
+            if (goUp && playerLocation[1] > 0 && gameBoard[playerLocation[0], playerLocation[1] - 1].walkable)
+            {
+                if (gameBoard[playerLocation[0], playerLocation[1] - 1].isDoor)
+                {
+                    foreach (var _ in inventory.Where(k => k.color == gameBoard[playerLocation[0], playerLocation[1] - 1].door.color).Select(k => new { })) { playerLocation[1] -= 1; }
+                }
+                else { playerLocation[1] -= 1; }
+            }
+            if (goDown && playerLocation[1] < 8 && gameBoard[playerLocation[0], playerLocation[1] + 1].walkable)
+            {
+                if (gameBoard[playerLocation[0], playerLocation[1] + 1].isDoor)
+                {
+                    foreach (var _ in inventory.Where(k => k.color == gameBoard[playerLocation[0], playerLocation[1] + 1].door.color).Select(k => new { })) { playerLocation[1] += 1; }
+                }
+                else { playerLocation[1] += 1; }
+            }
+            if (goLeft && playerLocation[0] > 0 && gameBoard[playerLocation[0] - 1, playerLocation[1]].walkable)
+            {
+                if (gameBoard[playerLocation[0] - 1, playerLocation[1]].isDoor)
+                {
+                    foreach (var _ in inventory.Where(k => k.color == gameBoard[playerLocation[0] - 1, playerLocation[1]].door.color).Select(k => new { })) { playerLocation[0] -= 1; }
+                }
+                else { playerLocation[0] -= 1; }
+            }
+            if (goRight && playerLocation[0] < 8 && gameBoard[playerLocation[0] + 1, playerLocation[1]].walkable)
+            {
+                if (gameBoard[playerLocation[0] + 1, playerLocation[1]].isDoor)
+                {
+                    foreach (var _ in inventory.Where(k => k.color == gameBoard[playerLocation[0] + 1, playerLocation[1]].door.color).Select(k => new { })) { playerLocation[0] += 1; }
+                }
+                else { playerLocation[0] += 1; }
+            }
             gameBoard[playerLocation[0], playerLocation[1]].TogglePlayer();
-
-
         }
 
         // Handle key presses
