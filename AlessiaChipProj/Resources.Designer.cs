@@ -93,6 +93,16 @@ namespace AlessiaChipProj {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BlueKey {
+            get {
+                object obj = ResourceManager.GetObject("BlueKey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Chip {
             get {
                 object obj = ResourceManager.GetObject("Chip", resourceCulture);
@@ -123,9 +133,39 @@ namespace AlessiaChipProj {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NoKey {
+            get {
+                object obj = ResourceManager.GetObject("NoKey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Player {
+            get {
+                object obj = ResourceManager.GetObject("Player", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RedDoor {
             get {
                 object obj = ResourceManager.GetObject("RedDoor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RedKey {
+            get {
+                object obj = ResourceManager.GetObject("RedKey", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +186,16 @@ namespace AlessiaChipProj {
         internal static System.Drawing.Bitmap YellowDoor {
             get {
                 object obj = ResourceManager.GetObject("YellowDoor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap YellowKey {
+            get {
+                object obj = ResourceManager.GetObject("YellowKey", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

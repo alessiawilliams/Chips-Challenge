@@ -127,6 +127,9 @@
   <data name="BlueDoor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\BlueDoor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BlueKey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BlueKey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Chip" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Chip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,13 +139,25 @@
   <data name="HintBlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\HintBlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="NoKey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\NoKey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Player.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="RedDoor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\RedDoor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RedKey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\RedKey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Wall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Wall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="YellowDoor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\YellowDoor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="YellowKey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\YellowKey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

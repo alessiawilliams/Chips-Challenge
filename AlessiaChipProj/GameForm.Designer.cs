@@ -49,7 +49,13 @@
             this.enterPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryLabel = new System.Windows.Forms.Label();
             this.hintLabel = new System.Windows.Forms.Label();
+            this.invenRedKey = new System.Windows.Forms.PictureBox();
+            this.invenYellowKey = new System.Windows.Forms.PictureBox();
+            this.invenBlueKey = new System.Windows.Forms.PictureBox();
             this.menuBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.invenRedKey)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invenYellowKey)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invenBlueKey)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -236,6 +242,33 @@
             this.hintLabel.TabIndex = 12;
             this.hintLabel.Text = "Hint:";
             // 
+            // invenRedKey
+            // 
+            this.invenRedKey.BackgroundImage = global::AlessiaChipProj.Resources.NoKey;
+            this.invenRedKey.Location = new System.Drawing.Point(433, 279);
+            this.invenRedKey.Name = "invenRedKey";
+            this.invenRedKey.Size = new System.Drawing.Size(43, 43);
+            this.invenRedKey.TabIndex = 13;
+            this.invenRedKey.TabStop = false;
+            // 
+            // invenYellowKey
+            // 
+            this.invenYellowKey.BackgroundImage = global::AlessiaChipProj.Resources.NoKey;
+            this.invenYellowKey.Location = new System.Drawing.Point(486, 279);
+            this.invenYellowKey.Name = "invenYellowKey";
+            this.invenYellowKey.Size = new System.Drawing.Size(43, 43);
+            this.invenYellowKey.TabIndex = 14;
+            this.invenYellowKey.TabStop = false;
+            // 
+            // invenBlueKey
+            // 
+            this.invenBlueKey.BackgroundImage = global::AlessiaChipProj.Resources.NoKey;
+            this.invenBlueKey.Location = new System.Drawing.Point(538, 279);
+            this.invenBlueKey.Name = "invenBlueKey";
+            this.invenBlueKey.Size = new System.Drawing.Size(43, 43);
+            this.invenBlueKey.TabIndex = 15;
+            this.invenBlueKey.TabStop = false;
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,6 +276,9 @@
             this.BackgroundImage = global::AlessiaChipProj.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(600, 450);
+            this.Controls.Add(this.invenBlueKey);
+            this.Controls.Add(this.invenYellowKey);
+            this.Controls.Add(this.invenRedKey);
             this.Controls.Add(this.hintLabel);
             this.Controls.Add(this.inventoryLabel);
             this.Controls.Add(this.tilePanel);
@@ -264,6 +300,9 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyUp);
             this.menuBar.ResumeLayout(false);
             this.menuBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.invenRedKey)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invenYellowKey)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invenBlueKey)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,6 +329,9 @@
         private System.Windows.Forms.ToolStripMenuItem restartToolStripMenuItem;
         private System.Windows.Forms.Label inventoryLabel;
         private System.Windows.Forms.Label hintLabel;
+        private System.Windows.Forms.PictureBox invenRedKey;
+        private System.Windows.Forms.PictureBox invenYellowKey;
+        private System.Windows.Forms.PictureBox invenBlueKey;
     }
 }
 
